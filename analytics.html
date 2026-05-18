@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Аналитика - CashFlow Platega</title>
+  <link rel="stylesheet" href="analytics.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-logo">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="6" fill="#6366f1"/>
+            <path d="M8 14c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M11 14h6M14 11v6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="sidebar-logo-text">CashFlow</span>
+        </a>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Кассы</div>
+        <div class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="2" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 9h6M9 6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div class="sidebar-item-text">
+            <span class="sidebar-item-name">StarlingZ</span>
+            <span class="sidebar-item-id">ID: a6fa9735-a544-4d1f...</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="analytics.html" class="sidebar-nav-item active">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M2 4h14M2 9h14M2 14h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>Аналитика</span>
+        </a>
+        <a href="#" class="sidebar-nav-item has-sub" id="opsToggle">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M9 5v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>Операции</span>
+          <svg class="sub-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <div class="sidebar-sub-menu" id="opsSubMenu" style="display:none">
+          <a href="transactions.html" class="sidebar-sub-item">Транзакции</a>
+          <a href="withdrawal.html" class="sidebar-sub-item">Вывод средств</a>
+          <a href="conversion.html" class="sidebar-sub-item">Конвертация</a>
+        </div>
+        <a href="settings.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M9 2l1.5 3h3l-2.5 2 1 3L9 8.5 5.5 10l1-3L4 5h3L9 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Настройки проекта</span>
+        </a>
+        <a href="payment-methods.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="3" y="3" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M3 7h12M7 7v8" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Методы приема платежей</span>
+        </a>
+        <a href="wallets.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 8h14" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Кошельки и карты</span>
+        </a>
+      </nav>
+
+      <!-- Chat Button -->
+      <div class="sidebar-bottom">
+        <p class="sidebar-help-text">Если у вас появились вопросы, оставьте сообщение менеджеру</p>
+        <button class="sidebar-chat-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 13l-1 3 3-1 8-8-2-2-8 8z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Перейти в чат с менеджером
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <header class="main-header">
+        <div class="main-header-left">
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="project-info">
+            <div class="project-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect width="20" height="20" rx="4" fill="#6366f1"/>
+                <path d="M6 10c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="project-name">StarlingZ <span class="project-arrow">&#8964;</span></div>
+              <div class="project-id">ID: bb5077_88a5</div>
+            </div>
+          </div>
+        </div>
+        <div class="main-header-right">
+          <div class="currency-badge">
+            <span class="currency-dot"></span>
+            <span>RUB</span>
+          </div>
+          <button class="settings-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="index.html">Главная</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Аналитика</span>
+      </div>
+
+      <!-- Page Title -->
+      <h1 class="page-title">Аналитика</h1>
+
+      <!-- Time Filters -->
+      <div class="analytics-filters">
+        <div class="filter-row">
+          <button class="filter-btn">Сегодня</button>
+          <button class="filter-btn">Вчера</button>
+          <button class="filter-btn">7 дней</button>
+          <button class="filter-btn active">30 дней</button>
+          <button class="filter-btn icon-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <rect x="1" y="2" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M1 5h12M4 1v2M10 1v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            Период
+          </button>
+          <div class="filter-date-range">Период: 14.04.2026 — 13.05.2026</div>
+          <div class="filter-timezone">UTC+0 <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        </div>
+        <button class="refresh-btn">
+          Обновить
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7a5 5 0 019.33-2.5M12 7a5 5 0 01-9.33 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M11 2v3h-3M3 12V9h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Metrics Cards -->
+      <div class="analytics-metrics">
+        <div class="metric-card">
+          <div class="metric-label">Оборот</div>
+          <div class="metric-value">₽ 2,876,000.00</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Прибыль</div>
+          <div class="metric-value">₽ 2,698,205.00</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Возврат средств</div>
+          <div class="metric-value">₽ 0.00</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Конверсия</div>
+          <div class="metric-value">92.6%</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Средний чек</div>
+          <div class="metric-value">₽ 28,760.00</div>
+        </div>
+      </div>
+
+      <!-- Main Chart -->
+      <div class="analytics-chart-section">
+        <div class="chart-container">
+          <div class="chart-y-axis left">
+            <span>800 000</span>
+            <span>600 000</span>
+            <span>400 000</span>
+            <span>200 000</span>
+            <span>0</span>
+          </div>
+          <div class="chart-body">
+            <div class="chart-grid">
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+            </div>
+            <svg class="chart-svg" viewBox="0 0 800 200" preserveAspectRatio="none">
+              <!-- Orange/red reference line -->
+              <line x1="0" y1="155" x2="800" y2="155" stroke="#e5a645" stroke-width="1.5" stroke-dasharray="0"/>
+              <!-- Area fill -->
+              <path d="M0 198 L60 195 L120 190 L180 185 L240 140 L280 80 L320 30 L360 45 L400 90 L440 120 L480 160 L520 175 L560 180 L600 185 L640 188 L680 150 L720 170 L760 185 L800 190 L800 200 L0 200 Z" fill="url(#chartGradient)" opacity="0.3"/>
+              <!-- Main line -->
+              <polyline points="0,198 60,195 120,190 180,185 240,140 280,80 320,30 360,45 400,90 440,120 480,160 520,175 560,180 600,185 640,188 680,150 720,170 760,185 800,190" fill="none" stroke="#5e8aff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Secondary line -->
+              <polyline points="0,198 60,196 120,192 180,188 240,145 280,90 320,40 360,55 400,100 440,130 480,165 520,178 560,183 600,187 640,190 680,155 720,175 760,188 800,192" fill="none" stroke="#7a60ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 2"/>
+              <defs>
+                <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#5e8aff" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#5e8aff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="chart-x-labels">
+              <span>14/04</span>
+              <span>15/04</span>
+              <span>16/04</span>
+              <span>17/04</span>
+              <span>18/04</span>
+              <span>22/04</span>
+              <span>23/04</span>
+              <span>24/04</span>
+              <span>25/04</span>
+              <span>27/04</span>
+              <span>28/04</span>
+              <span>30/04</span>
+              <span>03/05</span>
+              <span>04/05</span>
+              <span>05/05</span>
+              <span>09/05</span>
+              <span>13/05</span>
+            </div>
+          </div>
+          <div class="chart-y-axis right">
+            <span>800 000</span>
+            <span>600 000</span>
+            <span>400 000</span>
+            <span>200 000</span>
+            <span>0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Cards -->
+      <div class="analytics-bottom">
+        <!-- Оборот Card -->
+        <div class="analytics-card oborot-card">
+          <div class="oborot-header">
+            <span class="oborot-label">Оборот</span>
+            <h2 class="oborot-value">₽ 2 876 000</h2>
+          </div>
+          <div class="oborot-sub-cards">
+            <div class="oborot-sub">
+              <span class="oborot-sub-label">Прибыль</span>
+              <span class="oborot-sub-value">₽ 2 698 205</span>
+            </div>
+            <div class="oborot-sub">
+              <span class="oborot-sub-label">Ср. оборот в день</span>
+              <span class="oborot-sub-value">₽ 95 866.67</span>
+            </div>
+          </div>
+
+          <!-- Weekly bar chart -->
+          <div class="weekly-chart">
+            <div class="weekly-title">Оборот по дням недели</div>
+            <div class="weekly-chart-container">
+              <div class="weekly-y-axis">
+                <span>100</span>
+                <span>75</span>
+                <span>50</span>
+                <span>25</span>
+                <span>0</span>
+              </div>
+              <div class="weekly-bars">
+                <div class="weekly-bar-col">
+                  <div class="weekly-bar" style="height: 45%"></div>
+                  <span class="weekly-label">Пн</span>
+                </div>
+                <div class="weekly-bar-col">
+                  <div class="weekly-bar" style="height: 30%"></div>
+                  <span class="weekly-label">Вт</span>
+                </div>
+                <div class="weekly-bar-col">
+                  <div class="weekly-bar" style="height: 55%"></div>
+                  <span class="weekly-label">Ср</span>
+                </div>
+                <div class="weekly-bar-col">
+                  <div class="weekly-bar" style="height: 20%"></div>
+                  <span class="weekly-label">Чт</span>
+                </div>
+                <div class="weekly-bar-col">
+                  <div class="weekly-bar" style="height: 65%"></div>
+                  <span class="weekly-label">Пт</span>
+                </div>
+                <div class="weekly-bar-col">
+                  <div class="weekly-bar" style="height: 40%"></div>
+                  <span class="weekly-label">Сб</span>
+                </div>
+                <div class="weekly-bar-col">
+                  <div class="weekly-bar" style="height: 25%"></div>
+                  <span class="weekly-label">Вс</span>
+                </div>
+              </div>
+              <div class="weekly-y-axis right">
+                <span>100</span>
+                <span>75</span>
+                <span>50</span>
+                <span>25</span>
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Методы оплаты Card -->
+        <div class="analytics-card methods-card">
+          <h3 class="methods-title">Методы оплаты</h3>
+          <p class="methods-placeholder">Данная диаграмма находится в разработке</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Sidebar toggle
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('mobile-open');
+    });
+
+    // Close sidebar on outside click (mobile)
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && !sidebar.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        sidebar.classList.remove('mobile-open');
+      }
+    });
+
+    // Операции submenu toggle
+    const opsToggle = document.getElementById('opsToggle');
+    const opsSubMenu = document.getElementById('opsSubMenu');
+    if (opsToggle && opsSubMenu) {
+      opsToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = opsSubMenu.style.display !== 'none';
+        opsSubMenu.style.display = isOpen ? 'none' : 'block';
+        opsToggle.classList.toggle('open', !isOpen);
+      });
+    }
+
+    // Filter buttons
+    document.querySelectorAll('.filter-row .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-row .filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

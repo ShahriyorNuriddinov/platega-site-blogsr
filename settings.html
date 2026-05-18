@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Настройки - CashFlow Platega</title>
+  <link rel="stylesheet" href="settings.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-logo">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="6" fill="#6366f1"/>
+            <path d="M8 14c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M11 14h6M14 11v6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="sidebar-logo-text">CashFlow</span>
+        </a>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Кассы</div>
+        <div class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="2" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 9h6M9 6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div class="sidebar-item-text">
+            <span class="sidebar-item-name">StarlingZ</span>
+            <span class="sidebar-item-id">ID: b65d7755-b544-44fd-b32...</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="analytics.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M2 4h14M2 9h14M2 14h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>Аналитика</span>
+        </a>
+        <a href="#" class="sidebar-nav-item has-sub" id="opsToggle">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M9 5v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>Операции</span>
+          <svg class="sub-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <div class="sidebar-sub-menu" id="opsSubMenu" style="display:none">
+          <a href="transactions.html" class="sidebar-sub-item">Транзакции</a>
+          <a href="withdrawal.html" class="sidebar-sub-item">Вывод средств</a>
+          <a href="conversion.html" class="sidebar-sub-item">Конвертация</a>
+        </div>
+        <a href="settings.html" class="sidebar-nav-item active">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M9 2l1.5 3h3l-2.5 2 1 3L9 8.5 5.5 10l1-3L4 5h3L9 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Настройки проекта</span>
+        </a>
+        <a href="payment-methods.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="3" y="3" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M3 7h12M7 7v8" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Методы приема платежей</span>
+        </a>
+        <a href="wallets.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 8h14" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Кошельки и карты</span>
+        </a>
+      </nav>
+
+      <!-- Chat Button -->
+      <div class="sidebar-bottom">
+        <p class="sidebar-help-text">Если у вас появились вопросы, оставьте сообщение менеджеру</p>
+        <button class="sidebar-chat-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 13l-1 3 3-1 8-8-2-2-8 8z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Перейти в чат с менеджером
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <header class="main-header">
+        <div class="main-header-left">
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="project-info">
+            <div class="project-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect width="20" height="20" rx="4" fill="#6366f1"/>
+                <path d="M6 10c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="project-name">StarlingZ <span class="project-arrow">&#8964;</span></div>
+              <div class="project-id">ID: bb5077_88a5</div>
+            </div>
+          </div>
+        </div>
+        <div class="main-header-right">
+          <div class="currency-badge">
+            <span class="currency-dot"></span>
+            <span>RUB</span>
+          </div>
+          <button class="settings-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="index.html">Главная</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Настройки</span>
+      </div>
+
+      <!-- Page Title -->
+      <h1 class="page-title">Настройки</h1>
+
+      <!-- Settings Form -->
+      <div class="settings-form">
+        <h2 class="section-title">Интеграция и API</h2>
+
+        <!-- Merchant ID -->
+        <div class="form-group">
+          <label class="form-label">ID мерчанта</label>
+          <div class="input-with-copy">
+            <input type="text" class="form-input" value="bb5d7155-b544-44fd-b32a-832184df88a5" readonly />
+            <button class="copy-btn" title="Копировать">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M3 11V3a1.5 1.5 0 011.5-1.5H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- API Key -->
+        <div class="form-group">
+          <label class="form-label">API ключ</label>
+          <div class="input-with-actions">
+            <div class="input-wrapper">
+              <input type="password" class="form-input api-key-input" id="apiKeyInput" value="YOUR_STRIPE_API_KEY_HERE" readonly />
+              <div class="input-icons">
+                <button class="icon-btn" id="toggleApiKey" title="Показать/Скрыть">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z" stroke="currentColor" stroke-width="1.3"/>
+                    <circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.3"/>
+                  </svg>
+                </button>
+                <button class="icon-btn" title="Копировать">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M3 11V3a1.5 1.5 0 011.5-1.5H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <button class="generate-btn">Сгенерировать</button>
+          </div>
+          <p class="form-hint">Храните его в безопасном месте, если потеряете — нужно перевыпустить.</p>
+        </div>
+
+        <!-- Callback URL -->
+        <div class="form-group">
+          <h3 class="subsection-title">Callback URL</h3>
+          <label class="form-label">Адрес для POST (вебхуков):</label>
+          <div class="input-with-copy">
+            <input type="url" class="form-input" placeholder="URL" value="" />
+            <button class="copy-btn" title="Копировать">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M3 11V3a1.5 1.5 0 011.5-1.5H11" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+          <p class="form-hint">Убедитесь, что ваш вебхукі принимает JSON-запросы и возвращает статус 200 OK</p>
+          <p class="form-hint">Это важно для своевременного обновления статусов транзакций</p>
+        </div>
+
+        <!-- Save Button -->
+        <button class="save-btn">Сохранить изменения</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Sidebar toggle
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('mobile-open');
+    });
+
+    // Close sidebar on overlay click (mobile)
+    document.addEventListener('click', (e) => {
+      if (sidebar.classList.contains('mobile-open') && !sidebar.contains(e.target) && e.target !== mobileMenuBtn) {
+        sidebar.classList.remove('mobile-open');
+      }
+    });
+
+    // Операции submenu toggle
+    const opsToggle = document.getElementById('opsToggle');
+    const opsSubMenu = document.getElementById('opsSubMenu');
+    if (opsToggle && opsSubMenu) {
+      opsToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = opsSubMenu.style.display !== 'none';
+        opsSubMenu.style.display = isOpen ? 'none' : 'block';
+        opsToggle.classList.toggle('open', !isOpen);
+      });
+    }
+
+    // Toggle API Key visibility
+    const toggleBtn = document.getElementById('toggleApiKey');
+    const apiKeyInput = document.getElementById('apiKeyInput');
+    toggleBtn.addEventListener('click', () => {
+      if (apiKeyInput.type === 'password') {
+        apiKeyInput.type = 'text';
+      } else {
+        apiKeyInput.type = 'password';
+      }
+    });
+
+    // Copy buttons
+    document.querySelectorAll('.copy-btn, .icon-btn[title="Копировать"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const input = btn.closest('.input-with-copy, .input-wrapper').querySelector('input');
+        if (input) {
+          navigator.clipboard.writeText(input.value);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

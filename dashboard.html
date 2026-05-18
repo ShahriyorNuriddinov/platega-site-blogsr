@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Личный кабинет - CashFlow Platega</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-logo">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="6" fill="#6366f1"/>
+            <path d="M8 14c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M11 14h6M14 11v6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="sidebar-logo-text">CashFlow</span>
+        </a>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Кассы</div>
+        <div class="sidebar-item active">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="2" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 9h6M9 6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div class="sidebar-item-text">
+            <span class="sidebar-item-name">StarlingZ</span>
+            <span class="sidebar-item-id">ID: a6fa9735-a544-4d1f...</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="analytics.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M2 4h14M2 9h14M2 14h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>Аналитика</span>
+        </a>
+        <a href="#" class="sidebar-nav-item has-sub" id="opsToggle">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M9 5v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>Операции</span>
+          <svg class="sub-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <div class="sidebar-sub-menu" id="opsSubMenu" style="display:none">
+          <a href="transactions.html" class="sidebar-sub-item">Транзакции</a>
+          <a href="withdrawal.html" class="sidebar-sub-item">Вывод средств</a>
+          <a href="conversion.html" class="sidebar-sub-item">Конвертация</a>
+        </div>
+        <a href="settings.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M9 2l1.5 3h3l-2.5 2 1 3L9 8.5 5.5 10l1-3L4 5h3L9 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Настройки проекта</span>
+        </a>
+        <a href="payment-methods.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="3" y="3" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M3 7h12M7 7v8" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Методы приема платежей</span>
+        </a>
+        <a href="wallets.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 8h14" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Кошельки и карты</span>
+        </a>
+      </nav>
+
+      <!-- Chat Button -->
+      <div class="sidebar-bottom">
+        <p class="sidebar-help-text">Если у вас появились вопросы, оставьте сообщение менеджеру</p>
+        <button class="sidebar-chat-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 13l-1 3 3-1 8-8-2-2-8 8z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Перейти в чат с менеджером
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <header class="main-header">
+        <div class="main-header-left">
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="project-info">
+            <div class="project-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect width="20" height="20" rx="4" fill="#6366f1"/>
+                <path d="M6 10c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="project-name">StarlingZ</div>
+              <div class="project-id">ID: a66871_d8a8</div>
+            </div>
+          </div>
+        </div>
+        <div class="main-header-right">
+          <div class="currency-badge">
+            <span class="currency-dot"></span>
+            <span>RUB</span>
+          </div>
+          <button class="settings-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Key Metrics Section -->
+      <section class="metrics-section">
+        <div class="metrics-header">
+          <div>
+            <h1 class="metrics-title">Обзор ключевых показателей</h1>
+            <p class="metrics-subtitle">По кассе</p>
+          </div>
+          <button class="create-invoice-btn">Создать счёт +</button>
+        </div>
+
+        <!-- Balance Cards -->
+        <div class="balance-cards">
+          <div class="balance-card">
+            <div class="balance-card-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="4" width="16" height="12" rx="2" stroke="#fff" stroke-width="1.5"/>
+                <path d="M2 8h16" stroke="#fff" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="balance-card-amount">₽ 0.00</div>
+            <div class="balance-card-label">Доступный баланс (RUB)</div>
+          </div>
+          <div class="balance-card">
+            <div class="balance-card-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="8" stroke="#fff" stroke-width="1.5"/>
+                <path d="M10 6v8M7 8h5c1 0 2 .5 2 1.5s-1 1.5-2 1.5H7" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="balance-card-amount">$ 2.81</div>
+            <div class="balance-card-label">Доступный баланс (USDT)</div>
+          </div>
+          <div class="balance-card">
+            <div class="balance-card-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="8" stroke="#fff" stroke-width="1.5"/>
+                <path d="M10 6v4l3 2" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="balance-card-amount">$ 0.00</div>
+            <div class="balance-card-label">В процессе выплаты (USDT)</div>
+          </div>
+        </div>
+
+        <!-- Time Filters -->
+        <div class="time-filters">
+          <div class="filter-group currency-filters">
+            <button class="filter-btn active">RUB</button>
+            <button class="filter-btn">USDT</button>
+          </div>
+          <div class="filter-group period-filters">
+            <button class="filter-btn active">7 дней</button>
+            <button class="filter-btn">30 дней</button>
+          </div>
+          <button class="filter-btn icon-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <rect x="1" y="2" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M1 5h12M4 1v2M10 1v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            Период
+          </button>
+          <div class="filter-date">ср, 13 мая, 03:44 (UTC+0)</div>
+          <div class="filter-timezone">UTC+0 <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-cards">
+          <div class="stats-card">
+            <div class="stats-card-header">
+              <span class="stats-amount">₽ 0.00</span>
+            </div>
+            <div class="stats-card-label">
+              <span class="stats-dot green"></span>
+              Прибыль
+            </div>
+          </div>
+          <div class="stats-card">
+            <div class="stats-card-header">
+              <span class="stats-amount">₽ 0.00</span>
+            </div>
+            <div class="stats-card-label">
+              <span class="stats-dot blue"></span>
+              Оборот
+            </div>
+          </div>
+          <div class="stats-card">
+            <div class="stats-card-header">
+              <span class="stats-amount">₽ 0.00</span>
+            </div>
+            <div class="stats-card-label">
+              <span class="stats-dot red"></span>
+              Возврат средств
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart Area -->
+        <div class="chart-area">
+          <div class="chart-y-axis">
+            <span>100</span>
+            <span>75</span>
+            <span>50</span>
+            <span>25</span>
+            <span>0</span>
+          </div>
+          <div class="chart-body">
+            <div class="chart-grid">
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+              <div class="chart-grid-line"></div>
+            </div>
+            <svg class="chart-line-svg" viewBox="0 0 700 180" preserveAspectRatio="none">
+              <line x1="0" y1="178" x2="700" y2="178" stroke="#6366f1" stroke-width="2.5"/>
+              <circle cx="0" cy="178" r="4" fill="#6366f1"/>
+              <circle cx="116" cy="178" r="4" fill="#6366f1"/>
+              <circle cx="233" cy="178" r="4" fill="#6366f1"/>
+              <circle cx="350" cy="178" r="4" fill="#6366f1"/>
+              <circle cx="466" cy="178" r="4" fill="#6366f1"/>
+              <circle cx="583" cy="178" r="4" fill="#6366f1"/>
+              <circle cx="700" cy="178" r="4" fill="#6366f1"/>
+            </svg>
+            <div class="chart-x-labels">
+              <span>01/05</span>
+              <span>04/05</span>
+              <span>05/05</span>
+              <span>10/05</span>
+              <span>11/05</span>
+              <span>13/05</span>
+            </div>
+          </div>
+          <div class="chart-y-axis right">
+            <span>100</span>
+            <span>75</span>
+            <span>50</span>
+            <span>25</span>
+            <span>0</span>
+          </div>
+          <div class="chart-legend">
+            <button class="chart-legend-btn active">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M1 10L4 6l3 2 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Линии
+            </button>
+            <button class="chart-legend-btn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="1" y="6" width="3" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+                <rect x="5.5" y="3" width="3" height="10" rx="0.5" stroke="currentColor" stroke-width="1"/>
+                <rect x="10" y="1" width="3" height="12" rx="0.5" stroke="currentColor" stroke-width="1"/>
+              </svg>
+              Столбцы
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transactions Section -->
+      <section class="transactions-section">
+        <h2 class="transactions-title">История транзакций</h2>
+
+        <!-- Search -->
+        <div class="transactions-search">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="text" placeholder="Поиск" class="search-input" />
+        </div>
+
+        <!-- Filters -->
+        <div class="transactions-filters">
+          <div class="t-filter">
+            <label>Метод:</label>
+            <select><option>Все</option></select>
+          </div>
+          <div class="t-filter">
+            <label>Валюта</label>
+            <select><option>Все</option></select>
+          </div>
+          <div class="t-filter">
+            <label>Статус:</label>
+            <select><option>Все</option></select>
+          </div>
+          <div class="t-filter">
+            <select><option>Все время</option></select>
+          </div>
+          <div class="t-filter range">
+            <label>Сумма RUB</label>
+            <input type="text" value="7778" class="range-input" />
+          </div>
+          <div class="t-filter range-separator">
+            <input type="text" value="1000" class="range-input" />
+            <span>-</span>
+            <input type="text" value="5000" class="range-input" />
+          </div>
+          <button class="find-btn">
+            Найти
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="6" cy="6" r="4" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M9 9l3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button class="reset-filter-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <rect x="2" y="2" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M4 4l6 6M10 4l-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="transactions-count">Найдено записей: <strong>153</strong></div>
+
+        <!-- Table -->
+        <div class="transactions-table-wrapper">
+          <table class="transactions-table">
+            <thead>
+              <tr>
+                <th>Дата и время</th>
+                <th>Метод</th>
+                <th>Статус</th>
+                <th>Сумма</th>
+                <th>Валюта</th>
+                <th>ID</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>11.05.2026 в 18:27</td>
+                <td><span class="method-badge"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 6h12" stroke="currentColor" stroke-width="1.2"/></svg> СБП (QR-код)</span></td>
+                <td><span class="status-badge cancelled">Отменён <svg width="10" height="10" viewBox="0 0 10 10"><path d="M3 3l4 4M7 3l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></td>
+                <td class="amount-cell">500.00</td>
+                <td>RUB</td>
+                <td class="id-cell">aa61a6bf-f9e0-4fca-9dbf-ca611afbb32f</td>
+                <td><button class="row-action-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>03.05.2026 в 12:40</td>
+                <td><span class="method-badge"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> Метод оплаты не выбран</span></td>
+                <td><span class="status-badge cancelled">Отменён <svg width="10" height="10" viewBox="0 0 10 10"><path d="M3 3l4 4M7 3l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></td>
+                <td class="amount-cell">15000.00</td>
+                <td>RUB</td>
+                <td class="id-cell">6b893790-eda8-423f-ae8a-42358c027965</td>
+                <td><button class="row-action-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>05.05.2026 в 10:35</td>
+                <td><span class="method-badge"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> Метод оплаты не выбран</span></td>
+                <td><span class="status-badge cancelled">Отменён <svg width="10" height="10" viewBox="0 0 10 10"><path d="M3 3l4 4M7 3l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></td>
+                <td class="amount-cell">15000.00</td>
+                <td>RUB</td>
+                <td class="id-cell">d0a2cf0c-0ae8-477c-acc5-bfd6f7206b87</td>
+                <td><button class="row-action-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>02.05.2026 в 14:41</td>
+                <td><span class="method-badge"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 6h12" stroke="currentColor" stroke-width="1.2"/></svg> СБП (QR-код)</span></td>
+                <td><span class="status-badge success">Подтверждён <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+                <td class="amount-cell">10000.00</td>
+                <td>RUB</td>
+                <td class="id-cell">bd7d8986-1107-4d29-9f67-7dbe1f44243e</td>
+                <td><button class="row-action-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>02.05.2026 в 14:21</td>
+                <td><span class="method-badge"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> Метод оплаты не выбран</span></td>
+                <td><span class="status-badge cancelled">Отменён <svg width="10" height="10" viewBox="0 0 10 10"><path d="M3 3l4 4M7 3l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></td>
+                <td class="amount-cell">30000.00</td>
+                <td>RUB</td>
+                <td class="id-cell">9ff43cc4-4960-4a2d-8884-be7886d40688</td>
+                <td><button class="row-action-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>02.05.2026 в 14:15</td>
+                <td><span class="method-badge"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> Метод оплаты не выбран</span></td>
+                <td><span class="status-badge cancelled">Отменён <svg width="10" height="10" viewBox="0 0 10 10"><path d="M3 3l4 4M7 3l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></td>
+                <td class="amount-cell">1500.00</td>
+                <td>RUB</td>
+                <td class="id-cell">d8ef9c25-a772-4e7c-8004-b01c5847cf9d</td>
+                <td><button class="row-action-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>02.05.2026 в 14:06</td>
+                <td><span class="method-badge"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 6h12" stroke="currentColor" stroke-width="1.2"/></svg> СБП (QR-код)</span></td>
+                <td><span class="status-badge success">Подтверждён <svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td>
+                <td class="amount-cell">15000.00</td>
+                <td>RUB</td>
+                <td class="id-cell">c22bee69-f4ef-4c1c-aa7c-60caa830c919</td>
+                <td><button class="row-action-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>02.05.2026 в 13:35</td>
+                <td><span class="method-badge"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> Метод оплаты не выбран</span></td>
+                <td><span class="status-badge cancelled">Отменён <svg width="10" height="10" viewBox="0 0 10 10"><path d="M3 3l4 4M7 3l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></td>
+                <td class="amount-cell">30000.00</td>
+                <td>RUB</td>
+                <td class="id-cell">fbc1b46b-c8b3-4218-80ef-2798cb3bc576</td>
+                <td><button class="row-action-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>02.05.2026 в 13:34</td>
+                <td><span class="method-badge"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> Инвойсинг: мерчант</span></td>
+                <td><span class="status-badge cancelled">Отменён <svg width="10" height="10" viewBox="0 0 10 10"><path d="M3 3l4 4M7 3l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></td>
+                <td class="amount-cell">15000.00</td>
+                <td>RUB</td>
+                <td class="id-cell">1353abf4-ca1d-4887-9e63-4a53f7f2c9a4</td>
+                <td><button class="row-action-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+              </tr>
+              <tr>
+                <td>02.05.2026 в 13:32</td>
+                <td><span class="method-badge"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg> Метод оплаты не выбран</span></td>
+                <td><span class="status-badge cancelled">Отменён <svg width="10" height="10" viewBox="0 0 10 10"><path d="M3 3l4 4M7 3l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span></td>
+                <td class="amount-cell">10000.00</td>
+                <td>RUB</td>
+                <td class="id-cell">4a4983e2-130e-4f3c-b248-b6f31ca0de69</td>
+                <td><button class="row-action-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn">4</button>
+          <span class="page-dots">...</span>
+          <button class="page-btn">10</button>
+          <button class="page-btn page-next"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="page-btn page-last"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 3l4 4-4 4M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal: Создать счёт -->
+  <div class="modal-overlay" id="createInvoiceModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h2 class="modal-title">Создать счёт</h2>
+        <button class="modal-close" id="modalClose">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M4 4l10 10M14 4l-10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Способ оплаты -->
+        <div class="modal-field">
+          <label class="modal-label">Способ оплаты:</label>
+          <div class="modal-toggle-group">
+            <button class="modal-toggle-btn active">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M1 6h12" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+              СПБ (QR-код)
+            </button>
+            <button class="modal-toggle-btn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M5 7h4M7 5v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              Криптовалюта
+            </button>
+          </div>
+        </div>
+
+        <!-- Сумма и валюта -->
+        <div class="modal-field">
+          <label class="modal-label">Сумма и валюта:</label>
+          <div class="modal-currency-group">
+            <button class="modal-currency-btn active">
+              <span class="modal-currency-dot"></span>
+              RUB
+            </button>
+            <button class="modal-currency-btn">USDT</button>
+            <button class="modal-currency-btn">BTC</button>
+            <button class="modal-currency-btn">ETH</button>
+          </div>
+        </div>
+
+        <!-- Итоговая -->
+        <div class="modal-field">
+          <label class="modal-label">Итоговая:</label>
+          <input type="text" class="modal-input" placeholder="Введите сумму (RUB)" />
+        </div>
+
+        <!-- URL -->
+        <div class="modal-field">
+          <label class="modal-label">URL страницы оплаты (опционально)</label>
+          <input type="text" class="modal-input" placeholder="https://example.com/payment" />
+          <p class="modal-hint">Укажите URL на который будет перенаправлен плательщик после оплаты. Если не указать, будет использоваться стандартная страница оплаты.</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="modal-submit-btn">Создать счёт</button>
+        <button class="modal-cancel-btn" id="modalCancelBtn">Отменить</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sidebar toggle
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('mobile-open');
+    });
+
+    // Close sidebar on outside click (mobile)
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && !sidebar.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        sidebar.classList.remove('mobile-open');
+      }
+    });
+
+    // Операции submenu toggle
+    const opsToggle = document.getElementById('opsToggle');
+    const opsSubMenu = document.getElementById('opsSubMenu');
+    if (opsToggle && opsSubMenu) {
+      opsToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = opsSubMenu.style.display !== 'none';
+        opsSubMenu.style.display = isOpen ? 'none' : 'block';
+        opsToggle.classList.toggle('open', !isOpen);
+      });
+    }
+
+    // Modal
+    const modal = document.getElementById('createInvoiceModal');
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const modalClose = document.getElementById('modalClose');
+    const modalCancelBtn = document.getElementById('modalCancelBtn');
+    const createInvoiceBtn = document.querySelector('.create-invoice-btn');
+
+    function openModal() {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    createInvoiceBtn.addEventListener('click', openModal);
+    modalClose.addEventListener('click', closeModal);
+    modalCancelBtn.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+
+    // Toggle buttons in modal
+    document.querySelectorAll('.modal-toggle-group').forEach(group => {
+      group.querySelectorAll('.modal-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.modal-toggle-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    });
+
+    document.querySelectorAll('.modal-currency-group').forEach(group => {
+      group.querySelectorAll('.modal-currency-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.modal-currency-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

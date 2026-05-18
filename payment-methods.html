@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Методы приема платежей - CashFlow Platega</title>
+  <link rel="stylesheet" href="payment-methods.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-logo">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="6" fill="#6366f1"/>
+            <path d="M8 14c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M11 14h6M14 11v6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="sidebar-logo-text">CashFlow</span>
+        </a>
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M12 4l-6 6 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">Кассы</div>
+        <div class="sidebar-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="2" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 9h6M9 6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <div class="sidebar-item-text">
+            <span class="sidebar-item-name">StarlingZ</span>
+            <span class="sidebar-item-id">ID: b65e77_88a5</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="analytics.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M2 4h14M2 9h14M2 14h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>Аналитика</span>
+        </a>
+        <a href="#" class="sidebar-nav-item has-sub" id="opsToggle">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M9 5v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>Операции</span>
+          <svg class="sub-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <div class="sidebar-sub-menu" id="opsSubMenu" style="display:none">
+          <a href="transactions.html" class="sidebar-sub-item">Транзакции</a>
+          <a href="withdrawal.html" class="sidebar-sub-item">Вывод средств</a>
+          <a href="conversion.html" class="sidebar-sub-item">Конвертация</a>
+        </div>
+        <a href="settings.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M9 2l1.5 3h3l-2.5 2 1 3L9 8.5 5.5 10l1-3L4 5h3L9 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Настройки проекта</span>
+        </a>
+        <a href="payment-methods.html" class="sidebar-nav-item active">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="3" y="3" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M3 7h12M7 7v8" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Методы приема платежей</span>
+        </a>
+        <a href="wallets.html" class="sidebar-nav-item">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 8h14" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Кошельки и карты</span>
+        </a>
+      </nav>
+
+      <!-- Chat Button -->
+      <div class="sidebar-bottom">
+        <p class="sidebar-help-text">Если у вас появились вопросы, оставьте сообщение менеджеру</p>
+        <button class="sidebar-chat-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 13l-1 3 3-1 8-8-2-2-8 8z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Перейти в чат с менеджером
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <header class="main-header">
+        <div class="main-header-left">
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="project-info">
+            <div class="project-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect width="20" height="20" rx="4" fill="#6366f1"/>
+                <path d="M6 10c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="project-name">StarlingZ</div>
+              <div class="project-id">ID: bb5077_88a5</div>
+            </div>
+          </div>
+        </div>
+        <div class="main-header-right">
+          <div class="currency-badge">
+            <span class="currency-dot"></span>
+            <span>RUB</span>
+          </div>
+          <button class="settings-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="index.html">Главная</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Методы приема платежей</span>
+      </div>
+
+      <!-- Page Title Section -->
+      <div class="page-title-section">
+        <div class="page-title-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="3" stroke="#fff" stroke-width="1.5"/>
+            <path d="M3 9h18M9 9v12" stroke="#fff" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="page-title">Методы приема платежей</h1>
+          <p class="page-subtitle">Управление URL, перенаправлений и типом комиссии</p>
+        </div>
+      </div>
+
+      <!-- Info Banner -->
+      <div class="info-banner">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M8 5v1M8 8v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        <span>Напишите персональному менеджеру, если хотите добавить или изменить метод.</span>
+      </div>
+
+      <!-- Payment Methods Grid -->
+      <div class="methods-grid">
+        <!-- Card 1: СБП (QR-код) - Active -->
+        <div class="method-card method-card--active">
+          <div class="method-card-header">
+            <div class="method-card-title-row">
+              <div class="method-icon method-icon--sbp">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" fill="#fff"/>
+                  <path d="M5 10l3-5h4l3 5-3 5H8l-3-5z" fill="#22c55e"/>
+                </svg>
+              </div>
+              <span class="method-name">СБП (QR-код)</span>
+              <span class="method-commission">5.5%</span>
+              <span class="method-badge method-badge--active">Активен</span>
+            </div>
+          </div>
+          <div class="method-card-body">
+            <div class="method-detail">
+              <span class="method-detail-label">URL через отправления</span>
+              <span class="method-detail-value">http://starlingzz.ru/</span>
+            </div>
+            <div class="method-card-footer">
+              <div class="method-detail">
+                <span class="method-detail-label">Тип комиссии</span>
+                <span class="method-detail-value">Оплачивает мерчант</span>
+              </div>
+              <button class="edit-btn">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 10l-0.5 2.5 2.5-0.5L11.5 4.5 9.5 2.5 2 10z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Редактировать
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: ЕРИП - Inactive -->
+        <div class="method-card">
+          <div class="method-card-header">
+            <div class="method-card-title-row">
+              <div class="method-icon method-icon--erip">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="1" y="1" width="18" height="18" rx="4" fill="#374151"/>
+                  <path d="M6 7h8M6 10h8M6 13h5" stroke="#9ca3af" stroke-width="1.3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="method-name">ЕРИП</span>
+              <span class="method-badge method-badge--inactive">Не активен</span>
+            </div>
+          </div>
+          <div class="method-card-body">
+            <div class="method-detail">
+              <span class="method-detail-label">URL перенаправления</span>
+              <span class="method-detail-value">https://example.com/</span>
+            </div>
+            <div class="method-card-footer">
+              <div class="method-detail">
+                <span class="method-detail-label">Тип комиссии</span>
+                <span class="method-detail-value">Оплачивает клиент</span>
+              </div>
+              <button class="edit-btn edit-btn--outline">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 10l-0.5 2.5 2.5-0.5L11.5 4.5 9.5 2.5 2 10z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Редактировать
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Карточный эквайринг - Inactive -->
+        <div class="method-card">
+          <div class="method-card-header">
+            <div class="method-card-title-row">
+              <div class="method-icon method-icon--card">
+                <span class="method-icon-text">mir</span>
+              </div>
+              <span class="method-name">Карточный эквайринг</span>
+              <span class="method-badge method-badge--inactive">Не активен</span>
+            </div>
+          </div>
+          <div class="method-card-body">
+            <div class="method-detail">
+              <span class="method-detail-label">URL перенаправления</span>
+              <span class="method-detail-value">https://example.com/</span>
+            </div>
+            <div class="method-card-footer">
+              <div class="method-detail">
+                <span class="method-detail-label">Тип комиссии</span>
+                <span class="method-detail-value">Оплачивает клиент</span>
+              </div>
+              <button class="edit-btn edit-btn--outline">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 10l-0.5 2.5 2.5-0.5L11.5 4.5 9.5 2.5 2 10z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Редактировать
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Международный эквайринг - Inactive -->
+        <div class="method-card">
+          <div class="method-card-header">
+            <div class="method-card-title-row">
+              <div class="method-icon method-icon--visa">
+                <span class="method-icon-text">VISA</span>
+              </div>
+              <span class="method-name">Международный эквайринг</span>
+              <span class="method-badge method-badge--inactive">Не активен</span>
+            </div>
+          </div>
+          <div class="method-card-body">
+            <div class="method-detail">
+              <span class="method-detail-label">URL перенаправления</span>
+              <span class="method-detail-value">https://example.com/</span>
+            </div>
+            <div class="method-card-footer">
+              <div class="method-detail">
+                <span class="method-detail-label">Тип комиссии</span>
+                <span class="method-detail-value">Оплачивает клиент</span>
+              </div>
+              <button class="edit-btn edit-btn--outline">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 10l-0.5 2.5 2.5-0.5L11.5 4.5 9.5 2.5 2 10z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Редактировать
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: Криптовалюта - Active -->
+        <div class="method-card method-card--active">
+          <div class="method-card-header">
+            <div class="method-card-title-row">
+              <div class="method-icon method-icon--crypto">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" fill="#f59e0b"/>
+                  <text x="10" y="14" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">B</text>
+                </svg>
+              </div>
+              <span class="method-name">Криптовалюта</span>
+              <span class="method-commission">5%</span>
+              <span class="method-badge method-badge--active">Активен</span>
+            </div>
+          </div>
+          <div class="method-card-body">
+            <div class="method-detail">
+              <span class="method-detail-label">URL перенаправления</span>
+              <span class="method-detail-value">http://starlingzz.ru/</span>
+            </div>
+            <div class="method-card-footer">
+              <div class="method-detail">
+                <span class="method-detail-label">Тип комиссии</span>
+                <span class="method-detail-value">Оплачивает мерчант</span>
+              </div>
+              <button class="edit-btn">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 10l-0.5 2.5 2.5-0.5L11.5 4.5 9.5 2.5 2 10z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Редактировать
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Methods Counter -->
+      <div class="methods-counter">
+        Подключено методов: <strong>2</strong>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Sidebar toggle
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+    });
+
+    mobileMenuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('mobile-open');
+    });
+
+    // Close sidebar on overlay click (mobile)
+    document.addEventListener('click', (e) => {
+      if (sidebar.classList.contains('mobile-open') && !sidebar.contains(e.target) && e.target !== mobileMenuBtn) {
+        sidebar.classList.remove('mobile-open');
+      }
+    });
+
+    // Операции submenu toggle
+    const opsToggle = document.getElementById('opsToggle');
+    const opsSubMenu = document.getElementById('opsSubMenu');
+    if (opsToggle && opsSubMenu) {
+      opsToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = opsSubMenu.style.display !== 'none';
+        opsSubMenu.style.display = isOpen ? 'none' : 'block';
+        opsToggle.classList.toggle('open', !isOpen);
+      });
+    }
+  </script>
+</body>
+</html>
