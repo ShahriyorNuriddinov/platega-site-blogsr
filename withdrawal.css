@@ -908,6 +908,10 @@ input:checked + .toggle-slider:before {
 }
 
 @media (max-width: 768px) {
+  .dashboard {
+    overflow-x: hidden;
+  }
+
   .sidebar {
     transform: translateX(-100%);
     position: fixed;
@@ -936,6 +940,9 @@ input:checked + .toggle-slider:before {
   .main-content {
     margin-left: 0;
     padding: 16px;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
   }
 
   .mobile-menu-btn {
@@ -957,21 +964,33 @@ input:checked + .toggle-slider:before {
 
   .page-actions {
     width: 100%;
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .manage-wallets-btn,
+  .withdraw-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .info-cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 12px;
   }
 
   .balance-card {
-    grid-column: span 2;
+    grid-column: span 1;
     flex-direction: column;
   }
 
   .balance-right {
     min-width: unset;
+  }
+
+  .history-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .history-filters {
@@ -995,26 +1014,6 @@ input:checked + .toggle-slider:before {
 @media (max-width: 480px) {
   .main-content {
     padding: 12px;
-  }
-
-  .info-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .balance-card {
-    grid-column: span 1;
-  }
-
-  .page-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .manage-wallets-btn,
-  .withdraw-btn {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
   }
 
   .history-table {

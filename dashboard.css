@@ -988,6 +988,10 @@ body {
 }
 
 @media (max-width: 768px) {
+  .dashboard {
+    overflow-x: hidden;
+  }
+
   .sidebar {
     transform: translateX(-100%);
     position: fixed;
@@ -1016,6 +1020,9 @@ body {
   .main-content {
     margin-left: 0;
     padding: 16px;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
   }
 
   .mobile-menu-btn {
