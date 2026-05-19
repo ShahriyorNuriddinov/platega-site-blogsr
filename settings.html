@@ -243,13 +243,13 @@
     if (opsToggle && opsSubMenu) {
       // Auto-open if current page is in this submenu
       if (opsSubMenu.querySelector('.sidebar-sub-item.active')) {
-        opsSubMenu.style.display = 'block';
+        opsSubMenu.style.display = 'flex';
         opsToggle.classList.add('open');
       }
       opsToggle.addEventListener('click', (e) => {
         e.preventDefault();
         const isOpen = opsSubMenu.style.display !== 'none';
-        opsSubMenu.style.display = isOpen ? 'none' : 'block';
+        opsSubMenu.style.display = isOpen ? 'none' : 'flex';
         opsToggle.classList.toggle('open', !isOpen);
       });
     }

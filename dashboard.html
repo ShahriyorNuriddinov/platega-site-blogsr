@@ -574,7 +574,7 @@
       opsToggle.addEventListener('click', (e) => {
         e.preventDefault();
         const isOpen = opsSubMenu.style.display !== 'none';
-        opsSubMenu.style.display = isOpen ? 'none' : 'block';
+        opsSubMenu.style.display = isOpen ? 'none' : 'flex';
         opsToggle.classList.toggle('open', !isOpen);
       });
     }
