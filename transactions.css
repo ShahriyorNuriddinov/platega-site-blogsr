@@ -916,6 +916,10 @@ body {
     display: block;
   }
 
+  .sidebar.mobile-open .sidebar-sub-menu {
+    display: flex;
+  }
+
   .main-content {
     margin-left: 0;
     padding: 16px;
@@ -928,6 +932,10 @@ body {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
   .status-cards {
     grid-template-columns: repeat(2, 1fr);
@@ -1016,6 +1024,11 @@ body {
   .history-table tbody td:last-child {
     display: none;
   }
+
+  .history-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1065,5 +1078,14 @@ body {
   .filter-select {
     font-size: 12px;
     padding: 7px 10px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
+    font-size: 11.5px;
   }
 }

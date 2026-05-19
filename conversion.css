@@ -703,6 +703,10 @@ body {
     display: block;
   }
 
+  .sidebar.mobile-open .sidebar-sub-menu {
+    display: flex;
+  }
+
   .main-content {
     margin-left: 0;
     padding: 16px;
@@ -715,6 +719,10 @@ body {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
   .time-filters {
     gap: 8px;
@@ -785,6 +793,11 @@ body {
   .conversion-cell {
     white-space: nowrap;
   }
+
+  .conversion-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 @media (max-width: 480px) {
@@ -849,6 +862,15 @@ body {
 
   .amount-rub,
   .amount-usdt {
+    font-size: 11.5px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
     font-size: 11.5px;
   }
 }

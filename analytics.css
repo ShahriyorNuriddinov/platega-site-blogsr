@@ -814,6 +814,10 @@ body {
     display: block;
   }
 
+  .sidebar.mobile-open .sidebar-sub-menu {
+    display: flex;
+  }
+
   .main-content {
     margin-left: 0;
     padding: 16px;
@@ -826,6 +830,10 @@ body {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
   .analytics-metrics {
     grid-template-columns: repeat(2, 1fr);

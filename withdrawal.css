@@ -895,14 +895,42 @@ input:checked + .toggle-slider:before {
   }
 }
 
+/* Sidebar overlay (mobile) */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.sidebar-overlay.active {
+  display: block;
+}
+
 @media (max-width: 768px) {
   .sidebar {
     transform: translateX(-100%);
     position: fixed;
+    width: 248px;
   }
 
   .sidebar.mobile-open {
     transform: translateX(0);
+    width: 248px;
+  }
+
+  .sidebar.mobile-open .sidebar-logo-text,
+  .sidebar.mobile-open .sidebar-section-title,
+  .sidebar.mobile-open .sidebar-item-text,
+  .sidebar.mobile-open .sidebar-nav-item span,
+  .sidebar.mobile-open .sidebar-nav-item .sub-arrow,
+  .sidebar.mobile-open .sidebar-help-text,
+  .sidebar.mobile-open .sidebar-chat-btn span {
+    display: block;
+  }
+
+  .sidebar.mobile-open .sidebar-sub-menu {
+    display: flex;
   }
 
   .main-content {
@@ -917,6 +945,10 @@ input:checked + .toggle-slider:before {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
   .page-header {
     flex-direction: column;
@@ -936,6 +968,10 @@ input:checked + .toggle-slider:before {
   .balance-card {
     grid-column: span 2;
     flex-direction: column;
+  }
+
+  .balance-right {
+    min-width: unset;
   }
 
   .history-filters {
@@ -1004,5 +1040,14 @@ input:checked + .toggle-slider:before {
 
   .stat-value {
     font-size: 22px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
+    font-size: 11.5px;
   }
 }

@@ -1009,18 +1009,26 @@ body {
     display: block;
   }
 
+  .sidebar.mobile-open .sidebar-sub-menu {
+    display: flex;
+  }
+
   .main-content {
     margin-left: 0;
     padding: 16px;
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: flex;
   }
   .sidebar-toggle {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
   .metrics-title {
     font-size: 20px;

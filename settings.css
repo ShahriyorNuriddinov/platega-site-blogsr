@@ -603,6 +603,10 @@ body {
     display: block;
   }
 
+  .sidebar.mobile-open .sidebar-sub-menu {
+    display: flex;
+  }
+
   .main-content {
     margin-left: 0;
     padding: 16px;
@@ -615,6 +619,10 @@ body {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
   .settings-form {
     padding: 20px;
