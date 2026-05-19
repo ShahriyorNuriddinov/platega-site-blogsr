@@ -724,9 +724,21 @@ body {
 }
 
 /* Mobile */
+/* Sidebar overlay (mobile) */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.sidebar-overlay.active {
+  display: block;
+}
+
 @media (max-width: 768px) {
   .sidebar {
-    width: 240px;
+    width: 248px;
     transform: translateX(-100%);
     position: fixed;
   }

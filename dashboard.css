@@ -953,18 +953,38 @@ body {
   }
 }
 
+/* Sidebar overlay (mobile) */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.sidebar-overlay.active {
+  display: block;
+}
+
 @media (max-width: 768px) {
   .sidebar {
     transform: translateX(-100%);
     position: fixed;
+    width: 248px;
   }
 
   .sidebar.mobile-open {
     transform: translateX(0);
+    width: 248px;
   }
 
-  .sidebar {
-    width: 248px;
+  .sidebar.mobile-open .sidebar-logo-text,
+  .sidebar.mobile-open .sidebar-section-title,
+  .sidebar.mobile-open .sidebar-item-text,
+  .sidebar.mobile-open .sidebar-nav-item span,
+  .sidebar.mobile-open .sidebar-nav-item .sub-arrow,
+  .sidebar.mobile-open .sidebar-help-text,
+  .sidebar.mobile-open .sidebar-chat-btn span {
+    display: block;
   }
 
   .main-content {

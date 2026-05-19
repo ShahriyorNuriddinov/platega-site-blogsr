@@ -97,6 +97,8 @@
       </div>
     </aside>
 
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- Main Content -->
     <main class="main-content">
       <!-- Top Header -->
@@ -256,16 +258,19 @@
       sidebar.classList.toggle('collapsed');
     });
 
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function closeMobileSidebar() {
+      sidebar.classList.remove('mobile-open');
+      sidebarOverlay.classList.remove('active');
+    }
+
     mobileMenuBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('mobile-open');
+      const isOpen = sidebar.classList.toggle('mobile-open');
+      sidebarOverlay.classList.toggle('active', isOpen);
     });
 
-    // Close sidebar on overlay click (mobile)
-    document.addEventListener('click', (e) => {
-      if (sidebar.classList.contains('mobile-open') && !sidebar.contains(e.target) && e.target !== mobileMenuBtn) {
-        sidebar.classList.remove('mobile-open');
-      }
-    });
+    sidebarOverlay.addEventListener('click', closeMobileSidebar);
 
     // Операции submenu toggle
     const opsToggle = document.getElementById('opsToggle');
