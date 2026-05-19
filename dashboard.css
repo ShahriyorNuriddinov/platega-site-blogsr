@@ -973,6 +973,10 @@ body {
   .stats-cards {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .id-cell {
+    max-width: 140px;
+  }
 }
 
 /* Sidebar overlay (mobile) */
@@ -1015,12 +1019,25 @@ body {
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: flex;
   }
   .sidebar-toggle {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 
   .metrics-title {
     font-size: 20px;
@@ -1048,6 +1065,10 @@ body {
     align-items: flex-start;
   }
 
+  .t-filter {
+    width: 100%;
+  }
+
   .chart-area {
     padding: 16px;
     min-height: 180px;
@@ -1057,14 +1078,87 @@ body {
     display: none;
   }
 
+  .chart-legend {
+    position: static;
+    margin-top: 12px;
+    justify-content: center;
+  }
+
   .transactions-section {
     padding: 16px;
+  }
+
+  .transactions-title {
+    font-size: 18px;
+  }
+
+  .transactions-table-wrapper {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+  }
+
+  .transactions-table-wrapper::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .transactions-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .transactions-table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 4px;
+  }
+
+  .transactions-table {
+    min-width: 650px;
+  }
+
+  .transactions-table th:last-child,
+  .transactions-table td:last-child {
+    display: none;
+  }
+
+  .pagination {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
 @media (max-width: 480px) {
   .main-content {
     padding: 12px;
+  }
+
+  .main-header {
+    gap: 8px;
+  }
+
+  .main-header-left {
+    gap: 10px;
+  }
+
+  .project-info {
+    gap: 8px;
+  }
+
+  .project-name {
+    font-size: 13px;
+  }
+
+  .project-id {
+    font-size: 10px;
+  }
+
+  .currency-badge {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .settings-btn {
+    width: 30px;
+    height: 30px;
   }
 
   .balance-card-amount {
@@ -1079,6 +1173,49 @@ body {
 
   .filter-date {
     display: none;
+  }
+
+  .filter-btn {
+    padding: 5px 10px;
+    font-size: 11.5px;
+  }
+
+  .stats-card {
+    padding: 16px;
+  }
+
+  .stats-amount {
+    font-size: 18px;
+  }
+
+  .transactions-table {
+    min-width: 500px;
+    font-size: 11.5px;
+  }
+
+  .transactions-table th {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .transactions-table td {
+    padding: 12px 8px;
+  }
+
+  .transactions-count {
+    font-size: 11px;
+  }
+
+  .search-input {
+    font-size: 12px;
+  }
+
+  .metrics-title {
+    font-size: 18px;
+  }
+
+  .metrics-subtitle {
+    font-size: 12px;
   }
 }
 

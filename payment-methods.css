@@ -732,6 +732,19 @@ body {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 
   .methods-grid {
     grid-template-columns: 1fr;
@@ -776,6 +789,11 @@ body {
     font-size: 10px;
     padding: 2px 8px;
   }
+
+  .breadcrumb {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
 }
 
 /* Small Mobile */
@@ -786,6 +804,15 @@ body {
 
   .main-header {
     margin-bottom: 6px;
+    gap: 8px;
+  }
+
+  .main-header-left {
+    gap: 10px;
+  }
+
+  .project-info {
+    gap: 8px;
   }
 
   .page-title-section {
@@ -812,9 +839,27 @@ body {
     font-size: 13px;
   }
 
+  .project-id {
+    font-size: 10px;
+  }
+
   .currency-badge {
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .settings-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .method-limits {
+    gap: 6px;
+  }
+
+  .method-limit-label,
+  .method-limit-value {
+    font-size: 11px;
   }
 }
 

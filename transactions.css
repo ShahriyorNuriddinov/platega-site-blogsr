@@ -928,6 +928,19 @@ body {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 
   .status-cards {
     grid-template-columns: repeat(2, 1fr);
@@ -998,6 +1011,14 @@ body {
     justify-content: flex-start;
   }
 
+  .filter-group {
+    width: 100%;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+
   .records-count {
     margin-left: 0;
     margin-top: 4px;
@@ -1011,16 +1032,73 @@ body {
     display: none;
   }
 
-  /* Hide long ID column on mobile */
+  .history-table-wrapper {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+  }
+
+  .history-table-wrapper::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .history-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .history-table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 4px;
+  }
+
+  .history-table {
+    min-width: 600px;
+  }
+
   .history-table thead th:last-child,
   .history-table tbody td:last-child {
     display: none;
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+    margin-bottom: 14px;
   }
 }
 
 @media (max-width: 480px) {
   .main-content {
     padding: 12px;
+  }
+
+  .main-header {
+    gap: 8px;
+  }
+
+  .main-header-left {
+    gap: 10px;
+  }
+
+  .project-info {
+    gap: 8px;
+  }
+
+  .project-name {
+    font-size: 13px;
+  }
+
+  .project-id {
+    font-size: 10px;
+  }
+
+  .currency-badge {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .settings-btn {
+    width: 30px;
+    height: 30px;
   }
 
   .status-cards {
@@ -1047,6 +1125,7 @@ body {
 
   .history-table {
     font-size: 11.5px;
+    min-width: 500px;
   }
 
   .history-table thead th {
@@ -1062,8 +1141,42 @@ body {
     flex-wrap: wrap;
   }
 
+  .type-filter-btn {
+    padding: 7px 12px;
+    font-size: 11.5px;
+  }
+
   .filter-select {
     font-size: 12px;
     padding: 7px 10px;
+  }
+
+  .filter-action-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .chart-title {
+    font-size: 15px;
+  }
+
+  .chart-subtitle {
+    font-size: 11px;
+  }
+
+  .transaction-chart {
+    height: 100px;
+  }
+
+  .history-search {
+    padding: 8px 12px;
+  }
+
+  .search-input {
+    font-size: 12px;
   }
 }

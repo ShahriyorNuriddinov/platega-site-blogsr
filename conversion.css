@@ -715,6 +715,19 @@ body {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 
   .time-filters {
     gap: 8px;
@@ -758,6 +771,29 @@ body {
     border-radius: 12px;
   }
 
+  .conversion-table-wrapper {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+  }
+
+  .conversion-table-wrapper::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .conversion-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .conversion-table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 4px;
+  }
+
+  .conversion-table {
+    min-width: 600px;
+  }
+
   .conversion-table thead th {
     padding: 10px 8px;
     font-size: 11px;
@@ -768,7 +804,6 @@ body {
     font-size: 12px;
   }
 
-  /* Hide Период транзакций column on tablet/mobile */
   .conversion-table thead th:nth-child(5),
   .conversion-table tbody td:nth-child(5) {
     display: none;
@@ -785,11 +820,46 @@ body {
   .conversion-cell {
     white-space: nowrap;
   }
+
+  .breadcrumb {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
 }
 
 @media (max-width: 480px) {
   .main-content {
     padding: 12px;
+  }
+
+  .main-header {
+    gap: 8px;
+  }
+
+  .main-header-left {
+    gap: 10px;
+  }
+
+  .project-info {
+    gap: 8px;
+  }
+
+  .project-name {
+    font-size: 13px;
+  }
+
+  .project-id {
+    font-size: 10px;
+  }
+
+  .currency-badge {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .settings-btn {
+    width: 30px;
+    height: 30px;
   }
 
   .time-filter-btns {
@@ -815,6 +885,7 @@ body {
 
   .conversion-table {
     font-size: 11.5px;
+    min-width: 480px;
   }
 
   .conversion-table thead th {
@@ -827,7 +898,6 @@ body {
     font-size: 11.5px;
   }
 
-  /* Also hide Транзакций column on small mobile */
   .conversion-table thead th:nth-child(4),
   .conversion-table tbody td:nth-child(4) {
     display: none;
@@ -850,6 +920,10 @@ body {
   .amount-rub,
   .amount-usdt {
     font-size: 11.5px;
+  }
+
+  .per-page {
+    font-size: 11px;
   }
 }
 

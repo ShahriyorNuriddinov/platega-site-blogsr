@@ -942,6 +942,20 @@ input:checked + .toggle-slider:before {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
   .page-header {
     flex-direction: column;
     align-items: flex-start;
@@ -969,8 +983,21 @@ input:checked + .toggle-slider:before {
     flex-direction: column;
   }
 
+  .balance-right {
+    min-width: auto;
+  }
+
+  .history-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
   .history-filters {
     flex-wrap: wrap;
+  }
+
+  .filter-group {
+    width: 100%;
   }
 
   .records-count {
@@ -985,11 +1012,76 @@ input:checked + .toggle-slider:before {
   .history-section {
     padding: 16px;
   }
+
+  .history-table-wrapper {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.15) transparent;
+  }
+
+  .history-table-wrapper::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .history-table-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .history-table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 4px;
+  }
+
+  .history-table {
+    min-width: 650px;
+  }
+
+  .history-table thead th:nth-child(3),
+  .history-table tbody td:nth-child(3) {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .breadcrumb {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
 }
 
 @media (max-width: 480px) {
   .main-content {
     padding: 12px;
+  }
+
+  .main-header {
+    gap: 8px;
+  }
+
+  .main-header-left {
+    gap: 10px;
+  }
+
+  .project-info {
+    gap: 8px;
+  }
+
+  .project-name {
+    font-size: 13px;
+  }
+
+  .project-id {
+    font-size: 10px;
+  }
+
+  .currency-badge {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .settings-btn {
+    width: 30px;
+    height: 30px;
   }
 
   .info-cards {
@@ -1014,11 +1106,17 @@ input:checked + .toggle-slider:before {
 
   .history-table {
     font-size: 11px;
+    min-width: 500px;
   }
 
   .history-table thead th,
   .history-table tbody td {
     padding: 10px 8px;
+  }
+
+  .history-table thead th:nth-child(2),
+  .history-table tbody td:nth-child(2) {
+    display: none;
   }
 
   .filter-group {
@@ -1035,5 +1133,21 @@ input:checked + .toggle-slider:before {
 
   .stat-value {
     font-size: 22px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .auto-withdraw-label {
+    font-size: 12px;
+  }
+
+  .search-input {
+    font-size: 12px;
+  }
+
+  .per-page {
+    font-size: 11px;
   }
 }
