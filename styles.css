@@ -1267,8 +1267,13 @@ color: #2b3674;
   .stats-cards {
     grid-template-columns: 1fr;
   }
-  .reviews-slider {
-    grid-template-columns: 1fr;
+  .reviews-slider-wrapper {
+    gap: 4px;
+  }
+  .reviews-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
   }
   .blog-slider {
     grid-template-columns: 1fr;

@@ -29,27 +29,38 @@ document.querySelector('.back-to-top')?.addEventListener('click', (e) => {
 
     const cards = slider.querySelectorAll('.review-card');
     const total = cards.length;
-    const perPage = 3;
     const gap = 20;
-    const pages = Math.ceil(total / perPage);
     let current = 0;
+    let perPage = 3;
+    let pages = Math.ceil(total / perPage);
 
-    // Build dots
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < pages; i++) {
-        const d = document.createElement('span');
-        d.className = 'dot' + (i === 0 ? ' active' : '');
-        d.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(d);
+    function getPerPage() {
+        return window.innerWidth < 768 ? 1 : 3;
+    }
+
+    function buildDots() {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < pages; i++) {
+            const d = document.createElement('span');
+            d.className = 'dot' + (i === 0 ? ' active' : '');
+            d.addEventListener('click', () => goTo(i));
+            dotsContainer.appendChild(d);
+        }
     }
 
     function setCardWidths() {
+        perPage = getPerPage();
+        pages = Math.ceil(total / perPage);
+        current = Math.min(current, pages - 1);
+
         const containerWidth = overflow.offsetWidth;
         const cardW = (containerWidth - gap * (perPage - 1)) / perPage;
         cards.forEach(c => {
             c.style.width = cardW + 'px';
             c.style.minWidth = cardW + 'px';
         });
+
+        buildDots();
         goTo(current);
     }
 
