@@ -80,6 +80,51 @@ document.querySelector('.back-to-top')?.addEventListener('click', (e) => {
     window.addEventListener('resize', setCardWidths);
 })();
 
+// Mobile nav toggle
+(function() {
+    const toggle = document.getElementById('mobileNavToggle');
+    const nav = document.querySelector('.nav');
+    const headerRight = document.querySelector('.header-right');
+    if (!toggle || !nav) return;
+
+    let overlay = document.querySelector('.nav-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+    }
+
+    function closeMenu() {
+        toggle.classList.remove('active');
+        nav.classList.remove('mobile-open');
+        if (headerRight) headerRight.classList.remove('mobile-open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function openMenu() {
+        toggle.classList.add('active');
+        nav.classList.add('mobile-open');
+        if (headerRight) headerRight.classList.add('mobile-open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    toggle.addEventListener('click', () => {
+        if (nav.classList.contains('mobile-open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    nav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+})();
+
 // Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
