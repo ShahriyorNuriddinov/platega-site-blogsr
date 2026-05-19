@@ -995,6 +995,10 @@ body {
   .mobile-menu-btn {
     display: block;
   }
+  .sidebar-toggle {
+    display: none;
+  }
+
 
   .metrics-title {
     font-size: 20px;

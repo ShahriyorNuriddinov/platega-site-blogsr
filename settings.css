@@ -586,6 +586,10 @@ body {
   .mobile-menu-btn {
     display: flex;
   }
+  .sidebar-toggle {
+    display: none;
+  }
+
 
   .settings-form {
     padding: 20px;

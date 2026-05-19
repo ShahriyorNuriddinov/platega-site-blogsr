@@ -881,6 +881,10 @@ input:checked + .toggle-slider:before {
   .mobile-menu-btn {
     display: flex;
   }
+  .sidebar-toggle {
+    display: none;
+  }
+
 
   .page-header {
     flex-direction: column;

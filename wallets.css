@@ -765,6 +765,10 @@ body {
   .mobile-menu-btn {
     display: flex;
   }
+  .sidebar-toggle {
+    display: none;
+  }
+
 
   .wallets-toolbar {
     flex-direction: column;

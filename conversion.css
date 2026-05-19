@@ -679,6 +679,10 @@ body {
   .mobile-menu-btn {
     display: flex;
   }
+  .sidebar-toggle {
+    display: none;
+  }
+
 
   .time-filters {
     gap: 8px;

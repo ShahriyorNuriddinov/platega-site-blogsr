@@ -698,6 +698,10 @@ body {
   .mobile-menu-btn {
     display: flex;
   }
+  .sidebar-toggle {
+    display: none;
+  }
+
 
   .methods-grid {
     grid-template-columns: 1fr;

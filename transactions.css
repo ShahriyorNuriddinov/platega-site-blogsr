@@ -924,6 +924,10 @@ body {
   .mobile-menu-btn {
     display: flex;
   }
+  .sidebar-toggle {
+    display: none;
+  }
+
 
   .status-cards {
     grid-template-columns: repeat(2, 1fr);
