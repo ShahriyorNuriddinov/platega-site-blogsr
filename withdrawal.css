@@ -244,6 +244,19 @@ body {
   padding: 10px;
 }
 
+/* Sidebar overlay */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
 /* ===== MAIN CONTENT ===== */
 .main-content {
   flex: 1;
@@ -899,10 +912,22 @@ input:checked + .toggle-slider:before {
   .sidebar {
     transform: translateX(-100%);
     position: fixed;
+    width: 248px;
   }
 
   .sidebar.mobile-open {
     transform: translateX(0);
+    width: 248px;
+  }
+
+  .sidebar.mobile-open .sidebar-logo-text,
+  .sidebar.mobile-open .sidebar-section-title,
+  .sidebar.mobile-open .sidebar-item-text,
+  .sidebar.mobile-open .sidebar-nav-item span,
+  .sidebar.mobile-open .sidebar-nav-item .sub-arrow,
+  .sidebar.mobile-open .sidebar-help-text,
+  .sidebar.mobile-open .sidebar-chat-btn span {
+    display: block;
   }
 
   .main-content {
@@ -917,7 +942,6 @@ input:checked + .toggle-slider:before {
     display: none;
   }
 
-
   .page-header {
     flex-direction: column;
     align-items: flex-start;
@@ -925,7 +949,14 @@ input:checked + .toggle-slider:before {
 
   .page-actions {
     width: 100%;
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .manage-wallets-btn,
+  .withdraw-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .info-cards {

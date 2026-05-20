@@ -15,12 +15,21 @@
           <img src="assets/icons/logo.svg" alt="CashFlow" class="logo-img" />
         </a>
         <nav class="nav">
-          <a href="#" class="nav-link">Тарифы</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-btn">
+              Платежи
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="payments.html">Прием платежей</a>
+              <a href="index.html#pricing">Тарифы</a>
+            </div>
+          </div>
           <a href="ecommerce.html" class="nav-link">E-commerce</a>
-          <a href="#" class="nav-link">Как подключить</a>
+          <a href="index.html#how-to-connect" class="nav-link">Как подключить</a>
           <a href="about.html" class="nav-link">О компании</a>
           <a href="blog.html" class="nav-link">Блог</a>
-          <a href="#" class="nav-link">Вопросы и ответы</a>
+          <a href="index.html#faq" class="nav-link">Вопросы и ответы</a>
           <a href="contact.html" class="nav-link">Контакты</a>
         </nav>
         <div class="header-right">
@@ -29,19 +38,52 @@
             <span class="lang">EN</span>
           </div>
           <a href="dashboard.html" class="btn-cabinet">Личный кабинет</a>
+          <button class="menu-btn" id="menuOpen" aria-label="Open menu">
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+              <path d="M1 12H17M1 6H17M1 0H17" stroke="#4681FF" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
         </div>
       </div>
     </header>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-top">
+        <a href="index.html" class="logo"><img src="assets/icons/logo.svg" alt="Platega" class="logo-img" /></a>
+        <button class="mobile-close-btn" id="menuClose" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="payments.html">Прием платежей</a>
+        <a href="index.html#pricing">Тарифы</a>
+        <a href="ecommerce.html">E-commerce</a>
+        <a href="index.html#how-to-connect">Как подключить</a>
+        <a href="about.html">О компании</a>
+        <a href="blog.html">Блог</a>
+        <a href="index.html#faq">Вопросы и ответы</a>
+        <a href="contact.html">Контакты</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="dashboard.html" class="btn-cabinet">Личный кабинет</a>
+        <div class="mobile-lang-switcher">
+          <button class="mobile-lang active">RU</button>
+          <button class="mobile-lang">EN</button>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-bg-grid"></div>
       <div class="hero-content">
-        <h1 class="hero-title">platega — платёжная система<br />для бизнеса</h1>
-        <p class="hero-subtitle">
+        <h1 class="hero-title anim-fade-up">platega — платёжная система<br />для бизнеса</h1>
+        <p class="hero-subtitle anim-fade-up" style="transition-delay:100ms">
           Приём платежей на сайте, в соц сетях, приложении и по ссылке
         </p>
-        <div class="hero-features">
+        <div class="hero-features anim-fade-up" style="transition-delay:200ms">
           <div class="hero-feature">
             <div class="hero-feature-icons">
               <span class="icon-circle icon-mir"><img src="./assets/icons/SVG.svg" alt=""></span>
@@ -74,13 +116,13 @@
    </div>
 
     <!-- Consultation Section -->
-    <section class="consultation">
+    <section class="consultation" id="consultation">
       <div class="consultation-inner">
         <div class="consultation-left">
-          <h2 class="consultation-title">
+          <h2 class="consultation-title anim-fade-up">
             Бесплатная консультация<br />по финансам для бизнеса
           </h2>
-          <p class="consultation-text">
+          <p class="consultation-text anim-fade-up" style="transition-delay:100ms">
             Ответьте на 3 вопроса о вашем проекте и получите готовый<br />финтех-чекап:
             как снизить издержки, найти точки роста<br />и оптимизировать
             финансы.<br />10+ рекомендаций от экспертов platega
@@ -99,12 +141,12 @@
       </div>
     </section>
     <!-- Payment Methods Section -->
-    <section class="payment-methods">
-      <h2 class="section-title white">
+    <section class="payment-methods" id="pricing">
+      <h2 class="section-title white anim-fade-up">
         Способы приёма онлайн<br />платежей для бизнеса
       </h2>
       <div class="payment-cards">
-        <div class="payment-card">
+        <div class="payment-card anim-fade-up" style="transition-delay:0ms">
           <div class="payment-card-top">
             <h3 class="payment-card-title">Карты</h3>
             <p class="payment-card-commission">
@@ -120,7 +162,7 @@
             </div>
           </div>
         </div>
-        <div class="payment-card">
+        <div class="payment-card anim-fade-up" style="transition-delay:100ms">
           <div class="payment-card-top">
             <h3 class="payment-card-title">СБП</h3>
             <p class="payment-card-commission">
@@ -136,7 +178,7 @@
             </div>
           </div>
         </div>
-        <div class="payment-card">
+        <div class="payment-card anim-fade-up" style="transition-delay:200ms">
           <div class="payment-card-top">
             <h3 class="payment-card-title">Криптовалюта</h3>
             <p class="payment-card-commission">
@@ -156,7 +198,7 @@
             </div>
           </div>
         </div>
-        <div class="payment-card">
+        <div class="payment-card anim-fade-up" style="transition-delay:300ms">
           <div class="payment-card-top">
             <h3 class="payment-card-title">Специальные решения</h3>
                <p class="payment-card-desc">
@@ -175,12 +217,12 @@
     </section>
 
     <!-- Why Trust Section -->
-    <section class="trust-section">
-      <h2 class="section-title white">
+    <section class="trust-section" id="trust-business">
+      <h2 class="section-title white anim-fade-up">
         Почему бизнес доверяет<br />платежи platega
       </h2>
       <div class="trust-grid">
-        <div class="trust-card trust-card-purple">
+        <div class="trust-card trust-card-purple anim-fade-up" style="transition-delay:0ms">
           <div class="trust-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <rect x="2" y="2" width="7" height="7" rx="1.5" fill="white" />
@@ -201,7 +243,7 @@
             </div>
           </div>
         </div>
-        <div class="trust-card trust-card-purple">
+        <div class="trust-card trust-card-purple anim-fade-up" style="transition-delay:100ms">
           <div class="trust-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" />
@@ -223,7 +265,7 @@
             </div>
           </div>
         </div>
-        <div class="trust-card trust-card-purple">
+        <div class="trust-card trust-card-purple anim-fade-up" style="transition-delay:200ms">
           <div class="trust-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
@@ -242,7 +284,7 @@
             </div>
           </div>
         </div>
-        <div class="trust-card trust-card-purple">
+        <div class="trust-card trust-card-purple anim-fade-up" style="transition-delay:300ms">
           <div class="trust-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
@@ -269,23 +311,23 @@
 
     <!-- Stats Section -->
     <section class="stats-section container2">
-      <h2 class="section-title white">
+      <h2 class="section-title white anim-fade-up">
         Платёжная система platega<br />в цифрах
       </h2>
       <div class="stats-cards">
-        <div class="stat-card">
+        <div class="stat-card anim-fade-up" style="transition-delay:0ms">
           <div class="stat-value">
             > 4 150 <span class="stat-unit">мерчантов</span>
           </div>
           <p class="stat-desc">уже подключились к системе</p>
         </div>
-        <div class="stat-card">
+        <div class="stat-card anim-fade-up" style="transition-delay:100ms">
           <div class="stat-value">
             99,9% <span class="stat-unit">uptime</span>
           </div>
           <p class="stat-desc">бесперебойная работа сервиса</p>
         </div>
-        <div class="stat-card">
+        <div class="stat-card anim-fade-up" style="transition-delay:200ms">
           <div class="stat-value">
             105 <span class="stat-unit">отчётов</span>
           </div>
@@ -295,8 +337,8 @@
     </section>
 
     <!-- Reviews Section -->
-    <section class="reviews-section container2">
-      <h2 class="section-title white">Клиенты о platega</h2>
+    <section class="reviews-section container">
+      <h2 class="section-title white anim-fade-up">Клиенты о platega</h2>
       <div class="reviews-top-bar">
         <div class="reviews-rating">
           <span class="rating-score">5.0</span>
@@ -400,12 +442,12 @@
     </section>
 
     <!-- Steps Section -->
-    <section class="steps-section">
-      <h2 class="section-title white">
+    <section class="steps-section" id="how-to-connect">
+      <h2 class="section-title white anim-fade-up">
         Как начать принимать онлайн платежи<br />с платёжной системой platega?
       </h2>
       <div class="steps-cards">
-        <div class="step-card">
+        <div class="step-card anim-fade-up" style="transition-delay:0ms">
           <div class="step-header">
             <h3>Оставьте заявку</h3>
             <span class="step-badge">Шаг 1</span>
@@ -414,13 +456,13 @@
             Менеджер свяжется с вами<br />в течение 15-20 минут.
           </p>
           <div class="step-image">
-            <img src="assets/images/Оставьте заявку.png" alt="Шаг 1" />
+            <img src="assets/images/shag.png" alt="Шаг 1" />
           </div>
         </div>
         <div class="step-arrows">
           <span class="arrow">»</span>
         </div>
-        <div class="step-card">
+        <div class="step-card anim-fade-up" style="transition-delay:150ms">
           <div class="step-header">
             <h3>Согласуйте условия</h3>
             <span class="step-badge">Шаг 2</span>
@@ -458,7 +500,7 @@
         <div class="step-arrows">
           <span class="arrow">»</span>
         </div>
-        <div class="step-card">
+        <div class="step-card anim-fade-up" style="transition-delay:300ms">
           <div class="step-header">
             <h3>Интегрируйте платежи</h3>
             <span class="step-badge">Шаг 3</span>
@@ -468,7 +510,7 @@
             системы.
           </p>
           <div class="step-image">
-            <img src="assets/images/Интегрируйте платежи.png" alt="Шаг 3" />
+            <img src="assets/images/shag3.png" alt="Шаг 3" />
           </div>
         </div>
       </div>
@@ -479,10 +521,10 @@
 
     <!-- Blog Section -->
     <section class="blog-section">
-      <h2 class="section-title white">
+      <h2 class="section-title white anim-fade-up">
         Блог про бизнес,<br />платежи и финансы
       </h2>
-      <p class="blog-subtitle">Полезные статьи для развития вашего бизнеса</p>
+      <p class="blog-subtitle anim-fade-up" style="transition-delay:100ms">Полезные статьи для развития вашего бизнеса</p>
       <div class="blog-slider-container">
         <div class="blog-slider" id="blogSlider">
           <div class="blog-card">
@@ -544,12 +586,12 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section">
-      <h2 class="section-title white">
+    <section class="faq-section" id="faq">
+      <h2 class="section-title white anim-fade-up">
         Частые вопросы при выборе<br />платёжной системы
       </h2>
       <div class="faq-grid">
-        <div class="faq-item">
+        <div class="faq-item anim-fade-up" style="transition-delay:0ms">
           <button class="faq-btn">
             <span>Как работает платежная система?</span>
             <span class="faq-icon">+</span>
@@ -558,7 +600,7 @@
             Platega принимает платежи от покупателей через карты, СБП и криптовалюту, затем переводит средства на счёт мерчанта за вычетом комиссии. Все транзакции проходят через защищённые протоколы.
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item anim-fade-up">
           <button class="faq-btn">
             <span>Сколько времени занимает подключение платежной системы?</span>
             <span class="faq-icon">+</span>
@@ -567,7 +609,7 @@
             Подключение занимает от 2 до 24 часов. Для начала достаточно только электронной почты — менеджер сопроводит вас на каждом этапе.
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item anim-fade-up">
           <button class="faq-btn">
             <span>Можно ли платить с телефона?</span>
             <span class="faq-icon">+</span>
@@ -576,7 +618,7 @@
             Да, платежи принимаются с любых устройств: смартфонов, планшетов и компьютеров. Поддерживаются Apple Pay, Google Pay и оплата по QR-коду через СБП.
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item anim-fade-up">
           <button class="faq-btn">
             <span>Какие способы приема платежей поддерживает платежная система?</span>
             <span class="faq-icon">+</span>
@@ -585,7 +627,7 @@
             Platega поддерживает банковские карты (Visa, Mastercard, Мир), криптовалюты (USDT, BTC, TON и др.), а также СБП (Система быстрых платежей) по QR-коду и ссылке.
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item anim-fade-up">
           <button class="faq-btn">
             <span>Какие бывают комиссии при подключении платежной системы?</span>
             <span class="faq-icon">+</span>
@@ -594,7 +636,7 @@
             Комиссии зависят от способа оплаты: карты — от 4%, СБП — от 5%, криптовалюта — от 1%. Для крупных объёмов возможны индивидуальные условия — уточните у менеджера.
           </div>
         </div>
-        <div class="faq-item">
+        <div class="faq-item anim-fade-up">
           <button class="faq-btn">
             <span>Что обеспечивает безопасность платежей?</span>
             <span class="faq-icon">+</span>
@@ -607,13 +649,13 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section class="contact-section" id="connection-request">
       <div class="contact-inner">
         <div class="contact-left">
-          <h2 class="contact-title">
+          <h2 class="contact-title anim-fade-up">
             Заявка на подключение<br />платёжной системы
           </h2>
-          <p class="contact-text">
+          <p class="contact-text anim-fade-up" style="transition-delay:100ms">
             Оставьте сообщение менеджеру<br />для подключения.
           </p>
           <a href="#" class="btn-telegram">
@@ -654,18 +696,18 @@
         </div>
         <div class="footer-nav">
           <h4>Навигация</h4>
-          <a href="#">Тарифы</a>
-          <a href="#">E-commerce</a>
-          <a href="#">Возможности</a>
-          <a href="#">О компании</a>
-          <a href="#">Как подключить</a>
+          <a href="index.html#pricing">Тарифы</a>
+          <a href="ecommerce.html">E-commerce</a>
+          <a href="index.html#trust-business">Возможности</a>
+          <a href="about.html">О компании</a>
+          <a href="index.html#how-to-connect">Как подключить</a>
           <a href="blog.html">Блог</a>
         </div>
         <div class="footer-support">
           <h4>Поддержка</h4>
           <a href="contact.html">Контакты</a>
-          <a href="#">Консультация</a>
-          <a href="#">Вопросы и ответы</a>
+          <a href="index.html#consultation">Консультация</a>
+          <a href="index.html#faq">Вопросы и ответы</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -677,8 +719,8 @@
           </p>
         </div>
         <div class="footer-bottom-center">
-          <a href="#">Правила обработки персональных данных</a>
-          <a href="#">Публичная оферта</a>
+          <a href="privacy-policy.html">Правила обработки персональных данных</a>
+          <a href="public-offer.html">Публичная оферта</a>
         </div>
         <div class="footer-bottom-right">
           <a href="#" class="back-to-top"
@@ -691,3 +733,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+

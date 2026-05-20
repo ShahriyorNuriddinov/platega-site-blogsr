@@ -1,0 +1,119 @@
+/* ===== LEGAL PAGES (Privacy Policy, Public Offer) ===== */
+
+.legal-section {
+  padding: 120px 0 80px;
+  background: #0e0e14;
+  min-height: 80vh;
+}
+
+.legal-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 40px;
+}
+
+.legal-breadcrumb a {
+  color: rgba(255,255,255,0.5);
+  transition: color 0.2s;
+}
+
+.legal-breadcrumb a:hover { color: #fff; }
+.legal-breadcrumb span { color: rgba(255,255,255,0.5); }
+
+.legal-content {
+  max-width: 800px;
+}
+
+.legal-title {
+  font-family: 'Involve', 'Involve SemiBold', var(--font-family);
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.legal-updated {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 48px;
+}
+
+.legal-section-block {
+  margin-bottom: 40px;
+}
+
+.legal-section-block h2 {
+  font-family: 'Involve', 'Involve SemiBold', var(--font-family);
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.legal-section-block p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.legal-section-block ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-left: 0;
+}
+
+.legal-section-block ul li {
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.legal-section-block ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: #4681ff;
+}
+
+.legal-section-block a {
+  color: #4681ff;
+  transition: color 0.2s;
+}
+
+.legal-section-block a:hover {
+  color: #6fa0ff;
+}
+
+@media (max-width: 768px) {
+  .legal-section {
+    padding: 100px 20px 60px;
+  }
+  .legal-title {
+    font-size: 28px;
+  }
+  .legal-section-block h2 {
+    font-size: 17px;
+  }
+  .legal-section-block p,
+  .legal-section-block ul li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-title {
+    font-size: 24px;
+  }
+}
