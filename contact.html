@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -15,12 +15,20 @@
           <img src="assets/icons/logo.svg" alt="CashFlow" class="logo-img" />
         </a>
         <nav class="nav">
-          <a href="#" class="nav-link">Тарифы</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-btn">Платежи
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="payments.html">Прием платежей</a>
+              <a href="index.html#pricing">Тарифы</a>
+            </div>
+          </div>
           <a href="ecommerce.html" class="nav-link">E-commerce</a>
-          <a href="#" class="nav-link">Как подключить</a>
+          <a href="index.html#how-to-connect" class="nav-link">Как подключить</a>
           <a href="about.html" class="nav-link">О компании</a>
           <a href="blog.html" class="nav-link">Блог</a>
-          <a href="#" class="nav-link">Вопросы и ответы</a>
+          <a href="index.html#faq" class="nav-link">Вопросы и ответы</a>
           <a href="contact.html" class="nav-link active">Контакты</a>
         </nav>
         <div class="header-right">
@@ -29,12 +37,43 @@
             <span class="lang">EN</span>
           </div>
           <a href="dashboard.html" class="btn-cabinet">Личный кабинет</a>
+          <button class="menu-btn" id="menuOpen" aria-label="Open menu">
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><path d="M1 12H17M1 6H17M1 0H17" stroke="#4681FF" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
         </div>
         <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Меню">
           <span></span><span></span><span></span>
         </button>
       </div>
     </header>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-top">
+        <a href="index.html" class="logo"><img src="assets/icons/logo.svg" alt="Platega" class="logo-img" /></a>
+        <button class="mobile-close-btn" id="menuClose" aria-label="Close menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="payments.html">Прием платежей</a>
+        <a href="index.html#pricing">Тарифы</a>
+        <a href="ecommerce.html">E-commerce</a>
+        <a href="index.html#how-to-connect">Как подключить</a>
+        <a href="about.html">О компании</a>
+        <a href="blog.html">Блог</a>
+        <a href="index.html#faq">Вопросы и ответы</a>
+        <a href="contact.html">Контакты</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="dashboard.html" class="btn-cabinet">Личный кабинет</a>
+        <div class="mobile-lang-switcher">
+          <button class="mobile-lang active">RU</button>
+          <button class="mobile-lang">EN</button>
+        </div>
+      </div>
+    </div>
 
     <!-- Contact Hero Section -->
     <section class="contact-hero">
@@ -133,18 +172,18 @@
         </div>
         <div class="footer-nav">
           <h4>Навигация</h4>
-          <a href="#">Тарифы</a>
-          <a href="#">E-commerce</a>
-          <a href="#">Возможности</a>
-          <a href="#">О компании</a>
-          <a href="#">Как подключить</a>
+          <a href="index.html#pricing">Тарифы</a>
+          <a href="ecommerce.html">E-commerce</a>
+          <a href="index.html#trust-business">Возможности</a>
+          <a href="about.html">О компании</a>
+          <a href="index.html#how-to-connect">Как подключить</a>
           <a href="blog.html">Блог</a>
         </div>
         <div class="footer-support">
           <h4>Поддержка</h4>
           <a href="contact.html">Контакты</a>
-          <a href="#">Консультация</a>
-          <a href="#">Вопросы и ответы</a>
+          <a href="index.html#consultation">Консультация</a>
+          <a href="index.html#faq">Вопросы и ответы</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -156,8 +195,8 @@
           </p>
         </div>
         <div class="footer-bottom-center">
-          <a href="#">Правила обработки персональных данных</a>
-          <a href="#">Публичная оферта</a>
+          <a href="privacy-policy.html">Правила обработки персональных данных</a>
+          <a href="public-offer.html">Публичная оферта</a>
         </div>
         <div class="footer-bottom-right">
           <a href="#" class="back-to-top"

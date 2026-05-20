@@ -244,6 +244,19 @@ body {
   padding: 10px;
 }
 
+/* Sidebar overlay */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
 /* ===== MAIN CONTENT ===== */
 .main-content {
   flex: 1;
