@@ -1033,14 +1033,20 @@ input:checked + .toggle-slider:before {
   }
 
   .history-table {
-    min-width: 650px;
+    min-width: auto;
   }
 
   .history-table thead th:nth-child(3),
   .history-table tbody td:nth-child(3) {
-    max-width: 150px;
+    max-width: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  /* Hide ID column on tablet */
+  .history-table thead th:last-child,
+  .history-table tbody td:last-child {
+    display: none;
   }
 
   .breadcrumb {
@@ -1106,17 +1112,27 @@ input:checked + .toggle-slider:before {
 
   .history-table {
     font-size: 11px;
-    min-width: 500px;
+    min-width: auto;
   }
 
   .history-table thead th,
   .history-table tbody td {
-    padding: 10px 8px;
+    padding: 8px 6px;
   }
 
+  .history-table thead th {
+    font-size: 10.5px;
+  }
+
+  /* Hide Wallet column on small mobile */
   .history-table thead th:nth-child(2),
   .history-table tbody td:nth-child(2) {
     display: none;
+  }
+
+  .history-table .status-badge {
+    font-size: 10px;
+    padding: 3px 8px;
   }
 
   .filter-group {

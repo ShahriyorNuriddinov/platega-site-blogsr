@@ -791,7 +791,7 @@ body {
   }
 
   .conversion-table {
-    min-width: 600px;
+    min-width: auto;
   }
 
   .conversion-table thead th {
@@ -885,7 +885,7 @@ body {
 
   .conversion-table {
     font-size: 11.5px;
-    min-width: 480px;
+    min-width: auto;
   }
 
   .conversion-table thead th {
