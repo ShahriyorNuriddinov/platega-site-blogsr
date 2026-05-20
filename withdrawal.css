@@ -1124,15 +1124,28 @@ input:checked + .toggle-slider:before {
     font-size: 10.5px;
   }
 
-  /* Hide Wallet column on small mobile */
+  /* Hide ID and Wallet columns on small mobile */
   .history-table thead th:nth-child(2),
-  .history-table tbody td:nth-child(2) {
+  .history-table tbody td:nth-child(2),
+  .history-table thead th:nth-child(3),
+  .history-table tbody td:nth-child(3) {
     display: none;
   }
 
-  .history-table .status-badge {
+  .history-table thead th {
     font-size: 10px;
-    padding: 3px 8px;
+    padding: 8px 4px;
+  }
+
+  .history-table tbody td:first-child {
+    white-space: nowrap;
+    font-size: 10px;
+  }
+
+  .history-table .status-badge {
+    font-size: 9px;
+    padding: 3px 6px;
+    white-space: nowrap;
   }
 
   .filter-group {
