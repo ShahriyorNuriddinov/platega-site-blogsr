@@ -615,6 +615,19 @@ body {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 
   .settings-form {
     padding: 20px;
@@ -633,11 +646,51 @@ body {
   .page-title {
     font-size: 22px;
   }
+
+  .breadcrumb {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .save-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
   .main-content {
     padding: 12px;
+  }
+
+  .main-header {
+    gap: 8px;
+  }
+
+  .main-header-left {
+    gap: 10px;
+  }
+
+  .project-info {
+    gap: 8px;
+  }
+
+  .project-name {
+    font-size: 13px;
+  }
+
+  .project-id {
+    font-size: 10px;
+  }
+
+  .currency-badge {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .settings-btn {
+    width: 30px;
+    height: 30px;
   }
 
   .settings-form {
@@ -655,5 +708,13 @@ body {
 
   .section-title {
     font-size: 15px;
+  }
+
+  .form-label {
+    font-size: 12px;
+  }
+
+  .form-hint {
+    font-size: 11px;
   }
 }

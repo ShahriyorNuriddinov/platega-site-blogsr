@@ -794,6 +794,19 @@ body {
     display: none;
   }
 
+  .main-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 
   .wallets-toolbar {
     flex-direction: column;
@@ -830,12 +843,42 @@ body {
   .wallet-action-btn {
     justify-content: center;
   }
+
+  .breadcrumb {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
 }
 
 /* Small Mobile */
 @media (max-width: 480px) {
   .main-content {
     padding: 12px;
+  }
+
+  .main-header {
+    gap: 8px;
+  }
+
+  .main-header-left {
+    gap: 10px;
+  }
+
+  .project-info {
+    gap: 8px;
+  }
+
+  .project-name {
+    font-size: 13px;
+  }
+
+  .project-id {
+    font-size: 10px;
+  }
+
+  .settings-btn {
+    width: 30px;
+    height: 30px;
   }
 
   .page-title {
@@ -876,8 +919,8 @@ body {
   }
 
   .currency-badge {
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 5px 8px;
+    font-size: 11px;
   }
 }
 
