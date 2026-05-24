@@ -295,3 +295,19 @@
     max-width: 100%;
   }
 }
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .blog-hero {
+    padding: 70px 20px 24px;
+  }
+  .blog-hero-title {
+    font-size: 28px;
+  }
+  .blog-page-section {
+    padding: 24px 20px 40px;
+  }
+  .blog-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

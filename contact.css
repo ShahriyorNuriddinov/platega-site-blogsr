@@ -292,3 +292,25 @@
     padding: 16px 20px;
   }
 }
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .contact-hero {
+    padding: 70px 20px 30px;
+  }
+  .contact-hero-title {
+    font-size: 26px;
+  }
+  .contact-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-main {
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .contact-image {
+    flex: none;
+    order: 0;
+  }
+}
