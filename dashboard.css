@@ -987,7 +987,7 @@ body {
   display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .dashboard {
     overflow-x: hidden;
   }
@@ -1353,7 +1353,7 @@ body {
 }
 
 /* Modal Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .modal-panel {
     max-width: 100%;
   }
