@@ -908,7 +908,23 @@ input:checked + .toggle-slider:before {
   }
 }
 
+/* Sidebar overlay (mobile) */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.sidebar-overlay.active {
+  display: block;
+}
+
 @media (max-width: 768px) {
+  .dashboard {
+    overflow-x: hidden;
+  }
+
   .sidebar {
     transform: translateX(-100%);
     position: fixed;
@@ -930,9 +946,16 @@ input:checked + .toggle-slider:before {
     display: block;
   }
 
+  .sidebar.mobile-open .sidebar-sub-menu {
+    display: flex;
+  }
+
   .main-content {
     margin-left: 0;
     padding: 16px;
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
   }
 
   .mobile-menu-btn {
@@ -940,6 +963,11 @@ input:checked + .toggle-slider:before {
   }
   .sidebar-toggle {
     display: none;
+  }
+
+  .main-header {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .page-header {
@@ -960,13 +988,22 @@ input:checked + .toggle-slider:before {
   }
 
   .info-cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 12px;
   }
 
   .balance-card {
-    grid-column: span 2;
+    grid-column: span 1;
     flex-direction: column;
+  }
+
+  .balance-right {
+    min-width: unset;
+  }
+
+  .history-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .history-filters {
@@ -992,26 +1029,6 @@ input:checked + .toggle-slider:before {
     padding: 12px;
   }
 
-  .info-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .balance-card {
-    grid-column: span 1;
-  }
-
-  .page-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .manage-wallets-btn,
-  .withdraw-btn {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-
   .history-table {
     font-size: 11px;
   }
@@ -1035,5 +1052,14 @@ input:checked + .toggle-slider:before {
 
   .stat-value {
     font-size: 22px;
+  }
+
+  .main-header-right {
+    gap: 8px;
+  }
+
+  .currency-badge {
+    padding: 6px 10px;
+    font-size: 11.5px;
   }
 }
