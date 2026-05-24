@@ -778,3 +778,21 @@
   .footer { border-radius: 0; margin: 0; }
   .contact-section { margin: 0; border-radius: 0; }
 }
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .ec-hero { padding: 70px 20px 0; }
+  .ec-hero-inner { flex-direction: row; text-align: left; }
+  .ec-hero-content { max-width: 55%; padding-bottom: 20px; }
+  .ec-hero-title { font-size: 26px; }
+  .ec-acquiring { padding: 10px 20px 0; }
+  .ec-acquiring-inner { flex-direction: row; padding: 24px; }
+  .ec-acquiring-title { font-size: 24px; }
+  .ec-why-section, .ec-business-section, .ec-payment-section,
+  .ec-integration-section, .ec-steps-section { padding: 32px 20px; }
+  .ec-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .ec-integration-grid { grid-template-columns: repeat(3, 1fr); }
+  .ec-steps-cards { grid-template-columns: repeat(2, 1fr); }
+  .faq-section, .blog-section { padding: 32px 20px; }
+  .faq-grid { grid-template-columns: repeat(2, 1fr); }
+}

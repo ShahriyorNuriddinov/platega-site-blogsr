@@ -316,3 +316,16 @@
     padding: 20px;
   }
 }
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .pm-hero { padding: 70px 0 0; min-height: auto; }
+  .pm-hero-inner { flex-direction: row; }
+  .pm-hero-content { max-width: 55%; padding: 0 20px 20px; }
+  .pm-hero-title { font-size: 26px; }
+  .pm-hero-subtitle { font-size: 14px; }
+  .pm-hero-image { flex: 1; max-height: 260px; }
+  .pm-methods-section, .pm-why-section, .pm-steps-section { padding: 32px 20px; }
+  .pm-methods-grid { grid-template-columns: repeat(2, 1fr); }
+  .pm-why-grid { grid-template-columns: repeat(2, 1fr); }
+}

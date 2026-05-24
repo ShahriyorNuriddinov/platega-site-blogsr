@@ -725,3 +725,20 @@
   .ab-features-title { font-size: 24px; }
   .ab-feature-text { font-size: 16px; }
 }
+
+/* Landscape mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .ab-hero { padding: 70px 25px 20px; }
+  .ab-hero-title { font-size: 28px; }
+  .ab-hero-subtitle { font-size: 15px; }
+  .ab-stats-section, .ab-security-section, .ab-history-section,
+  .ab-features-section, .ab-platform-section, .ab-contact-section { padding: 40px 20px; }
+  .ab-stats-inner { grid-template-columns: 1fr; }
+  .ab-stats-phone-center { display: none; }
+  .ab-security-cards { grid-template-columns: repeat(2, 1fr); }
+  .ab-history-inner { flex-direction: row; gap: 24px; }
+  .ab-features-inner { flex-direction: row; }
+  .ab-contact-inner { flex-direction: row; gap: 24px; align-items: center; }
+  .ab-contact-title { font-size: 26px; }
+  .ab-stats-heading, .ab-security-heading, .ab-history-heading { font-size: 26px; }
+}
