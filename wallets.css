@@ -761,7 +761,7 @@ body {
   display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .sidebar {
     width: 248px;
     transform: translateX(-100%);
@@ -882,7 +882,7 @@ body {
 }
 
 /* Mobile overlay for sidebar */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .sidebar.mobile-open::before {
     content: '';
     position: fixed;
