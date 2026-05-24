@@ -1544,47 +1544,16 @@ color: #2b3674;
 /* Tablet / small laptop */
 @media (max-width: 900px) {
   .mobile-nav-toggle {
-    display: flex;
+    display: none !important;
   }
   .nav {
     display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    height: 100vh;
-    background: #1a0a2e;
-    flex-direction: column;
-    padding: 80px 24px 32px;
-    gap: 0;
-    z-index: 999;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.4);
-  }
-
-  .nav.mobile-open {
-    display: flex;
-  }
-
-  .nav-link {
-    padding: 14px 0;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: left;
   }
 
   .header-right {
-    display: none;
-  }
-
-  .header-right.mobile-open {
     display: flex;
-    position: fixed;
-    top: 20px;
-    right: 0;
-    width: 280px;
-    padding: 20px 24px;
-    background: transparent;
-    z-index: 1000;
+    align-items: center;
+    gap: 8px;
   }
 
   .menu-btn {
@@ -1729,6 +1698,9 @@ color: #2b3674;
 
 /* ===== LANDSCAPE MOBILE ===== */
 @media (max-height: 500px) and (orientation: landscape) {
+  .mobile-nav-toggle {
+    display: none !important;
+  }
   .nav {
     display: none;
   }
